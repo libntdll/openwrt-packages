@@ -7,12 +7,12 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=smartdns
 PKG_VERSION:=1.2025.46.2
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://www.github.com/pymumu/smartdns.git
-PKG_SOURCE_VERSION:=2303cffe0e5c2c42e9e9eb4c9a527099f3b16960
-PKG_MIRROR_HASH:=8f03c6172e09e388188ec71e7b943d8fdb481e96e8585d11373a34da62b8f6e6
+PKG_SOURCE_VERSION:=83a58fc937ed06dadfaa18dd7a9c25296347761e
+PKG_MIRROR_HASH:=ff504831b73246ddb6e074e2773bd4321b4588e624950f21ffdedc7040894429
 
 SMARTDNS_WEBUI_VERSION:=1.0.0
 SMAETDNS_WEBUI_SOURCE_PROTO:=git
@@ -129,8 +129,8 @@ endif
 define Build/Compile
 	$(call Build/Compile/Default,smartdns)
 ifdef CONFIG_PACKAGE_smartdns-ui
-	$(call Build/Compile/smartdns-webui)
 	$(call Build/Compile/smartdns-ui)
+	$(call Build/Compile/smartdns-webui)
 endif
 endef
 
